@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
     print_array(b, length, "b");
     std::cout << "====================" << std::endl;
 
-    #pragma omp parallel for schedule(static, chunk_size_2) num_threads(n_threads_2)
+    #pragma omp parallel for schedule(dynamic, chunk_size_2) num_threads(n_threads_2)
         for (int i = 0; i < length; i++) {
             c[i] = a[i] + b[i];
             printf("Thread %d of %d, c[%d] = %d \n", omp_get_thread_num(), omp_get_num_threads(), i, c[i]);
