@@ -12,6 +12,9 @@ int main(int argc, char const *argv[])
     int* a;
     a = (int*) malloc(sizeof(*a) * n);
 
+    // random seed
+    srand(time(0));
+
     for (int i = 0; i < n; i++) {
         a[i] = (rand()%100);
         std::cout << a[i]<< " ";
