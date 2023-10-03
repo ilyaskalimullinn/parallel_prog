@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
     }
 
     #pragma omp parallel for
-    for (int i = a / 2 + 1; i <= b; i++)
+    for (int i = a + 1 - a % 2; i <= b; i += 2)
     {
         if (is_prime(i)) {
             #pragma omp critical
